@@ -4,12 +4,12 @@ plugins {
 }
 
 group = 'net.kurage'
-version = '0.1.0'
+version = '0.1.1'
 
 sourceCompatibility = '11'
 targetCompatibility = '11'
 
-mainClassName = 'generator.Main'
+mainClassName = 'net.kurage.generator.Main'
 
 repositories {
     mavenCentral()
