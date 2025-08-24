@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'net.kurage'
+version = '0.1.0'
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+mainClassName = 'generator.Main'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:42.7.3'
+    implementation 'org.yaml:snakeyaml:2.2'
+    implementation 'io.ebean:ebean:13.20.0'
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+}
+
+task fatJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    archiveBaseName = "ebean-generator-all"
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+    doLast {
+        copy {
+            from archiveFile
+            into archiveFile.get().asFile.parent
+            rename { String fileName ->
+                "ebean-generator.jar"
+            }
+        }
+    }
+}
+
+application {
+    mainClass = mainClassName
+}

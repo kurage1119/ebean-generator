@@ -1,0 +1,34 @@
+# Java/Gradle build
+/build/
+/bin/
+/.gradle/
+/gradle/
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE files
+/.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.serena/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp
+*.log
+*.tmp
+
+# Generated reports
+/build/reports/
+
+# Others
+*.swp
+*.swo
+/output

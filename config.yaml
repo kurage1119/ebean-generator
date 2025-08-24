@@ -1,0 +1,10 @@
+db:
+  host: localhost
+  port: 5432
+  database: mydb
+  user: myuser
+  password: your_password
+
+output:
+  directory: ./output
+  packageName: com.example.models

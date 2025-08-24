@@ -1,0 +1,10 @@
+db:
+  host: localhost
+  port: 5432
+  database: ildb
+  user: postgres
+  password: example_password
+
+output:
+  directory: ./output
+  packageName: models
